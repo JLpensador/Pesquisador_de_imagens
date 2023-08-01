@@ -1,0 +1,228 @@
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(46, 0, 115),
+    rgb(2, 82, 122)
+  );
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+#search-input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 20px;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 1rem);
+  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+}
+
+#search-button {
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #444;
+  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#search-button:hover {
+  scale: 1;
+  transform-origin: top;
+  padding: 10px 20px;
+  cursor: pointer;
+  scale: 1;
+  transform-origin: top;
+  transition: scale 0.25s;
+}
+
+#search-button:active {
+  box-shadow: inset -4px 4px 0 #3a3b4d;
+}
+
+#search-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(120, 84, 0);
+  border-radius: 4px;
+  scale: 0 1;
+  transform-origin: top;
+  z-index: -1;
+}
+
+#search-button:hover::before {
+  scale: 1;
+  transform-origin: top;
+  transition: scale 0.25s;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-result {
+  margin-bottom: 60px;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.search-result:hover img {
+  transform: scale(1.05);
+}
+
+.search-result img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.search-result a {
+  padding: 10px;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-result:hover a {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#show-more-button {
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #444;
+  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+  cursor: pointer;
+  margin: 10px;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+  display: none;
+
+}
+
+#show-more-button:active {
+  box-shadow: inset -4px 4px 0 #3a3b4d;
+}
+
+#show-more-button:hover {
+  scale: 1;
+  transform-origin: top;
+  padding: 10px 20px;
+  cursor: pointer;
+  scale: 1;
+  transform-origin: top;
+  transition: scale 0.25s;
+}
+
+#show-more-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(60, 1, 91, 0.797);
+  border-radius: 4px;
+  scale: 0 1;
+  transform-origin: top;
+  z-index: -1;
+}
+
+#show-more-button:hover::before {
+  scale: 1;
+  transform-origin: top;
+  transition: scale 0.25s;
+}
+
+.menu-lateral{
+  position:fixed;
+  top: 0px;
+  right: 30px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  }
+  
+  .menu-lateral ul{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  }
+  
+  .menu-lateral .icone{
+  width: 50px;
+  filter: invert(1);
+  transition: 0.3s ease-in-out;
+  }
+  
+  .menu-lateral .icone:hover{
+      transform: scale(1.2);
+  }
+  
+
+@media screen and (max-width: 768px) {
+  .search-result {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .search-result {
+    width: 100%;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  #search-input {
+    margin-bottom: 20px;
+    width: 85%;
+  }
+}
